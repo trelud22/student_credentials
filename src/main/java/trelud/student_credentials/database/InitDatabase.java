@@ -22,7 +22,7 @@ public class InitDatabase {
     @PostConstruct
     public void createData(){
         try{
-            InputStream is = this.getClass().getResourceAsStream("/student_credetials.json");
+            InputStream is = this.getClass().getResourceAsStream("/student_credetials_photos.json");
 
             ObjectMapper om = new ObjectMapper()
                     .registerModule(new JavaTimeModule());

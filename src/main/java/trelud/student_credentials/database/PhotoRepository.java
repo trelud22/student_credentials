@@ -2,12 +2,9 @@ package trelud.student_credentials.database;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import trelud.student_credentials.dto.StudentDto;
+import trelud.student_credentials.pojo.Photo;
 import trelud.student_credentials.pojo.Student;
 
-import java.util.List;
-
 @Repository
-public interface StudentRepository extends JpaRepository<Student, Long> {
-    List<StudentDto> findAllByLastName(String lastName);
+public interface PhotoRepository extends JpaRepository<Photo, Long> {
 }
