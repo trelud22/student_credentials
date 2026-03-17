@@ -28,8 +28,5 @@ jobs:
 
       - name: Build and push
         run: |
-          docker build \
-            --tag ghcr.io/trelud22/backend:latest \
-            --file Docker/Dockerfile \
-            ./target
+          docker build --tag ghcr.io/trelud22/backend:latest --file Docker/Dockerfile ./target
           docker push ghcr.io/trelud22/backend:latest
