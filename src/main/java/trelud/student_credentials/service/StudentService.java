@@ -7,6 +7,7 @@ import trelud.student_credentials.dto.StudentDto;
 import trelud.student_credentials.pojo.Student;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
@@ -24,5 +25,12 @@ public class StudentService {
 
     public List<StudentDto> getAllByLastname(String lastname){
         return studentRepository.findAllByLastName(lastname);
+    }
+
+    public StudentDto getByMaxId(){
+        Long id = studentRepository.findMaxId();
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("No ID found"));
+        return student.getDto();
     }
 }

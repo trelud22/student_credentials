@@ -38,4 +38,9 @@ public class StudentController {
                 studentService.getAllByLastname(lastname)
         );
     }
+
+    @GetMapping("/byMaxId")
+    public ResponseEntity<StudentDto> getByMaxId(){
+        return ResponseEntity.ok(studentService.getByMaxId());
+    }
 }
